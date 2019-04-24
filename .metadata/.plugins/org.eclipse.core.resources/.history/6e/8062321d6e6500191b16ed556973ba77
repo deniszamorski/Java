@@ -1,0 +1,14 @@
+
+public class CalculatorApp {
+	public static void main(String[]args)
+	
+	{
+	int x = 50;
+	int y = 10;
+	int result1 = x + y;
+	int result2 = x - y;
+	int result3 = x * y;
+	int result4 = x / y;
+	}
+
+}

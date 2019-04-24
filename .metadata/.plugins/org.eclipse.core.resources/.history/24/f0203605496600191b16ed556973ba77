@@ -1,0 +1,58 @@
+package ch03_prj3_InterestCalculator;
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class InterestCalculatorApp {
+
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	String choice = "y";
+	while (choice.equalsIgnoreCase("y")) {
+		
+	// Hello part
+	System.out.println("Welcome To The Interest Calculator!");
+	
+	// Input values
+	System.out.println("Enter loan amount: ");
+	double loanAmount = sc.nextDouble();
+	System.out.println("Enter interest rate: ");
+	double interestRate = sc.nextDouble();
+	
+	double interestCalc = loanAmount * interestRate;
+	
+	BigDecimal decimalLoanAmount = new BigDecimal(Double.toString(loanAmount))
+			.setScale(2,RoundingMode.HALF_UP);
+	BigDecimal decimalInterestRate = new BigDecimal(Double.toString(interestRate))
+			.setScale(3,RoundingMode.HALF_UP);
+	BigDecimal decimalInterest = new BigDecimal(Double.toString(interestCalc))
+			.setScale(2,RoundingMode.HALF_UP);
+	
+	
+	
+	// Create BigDecimal objects for Loan Amount, Interest Rate, and Interest
+			/*
+			 * BigDecimal interestString = new;
+			 * 
+			 * BigDecimal loanAmount = new BigDecimal(enterLoanAmount)
+			 * .setScale(2,RoundingMode.HALF_UP); BigDecimal interestRate = new
+			 * BigDecimal(enterInterestRate) .setScale(3,RoundingMode.HALF_UP); BigDecimal
+			 * interest = new BigDecimal(interestString) .setScale(2,RoundingMode.HALF_UP);
+			 */
+	
+	// Display results
+	System.out.println("Loan Amount: " + decimalLoanAmount);
+	System.out.println("Interest Rate: " + decimalInterestRate);
+	System.out.println("Interest: " + decimalInterest);
+	
+	// Goodbye
+	System.out.println("Astalavista!");
+
+	}
+	
+
+	}
+
+}
