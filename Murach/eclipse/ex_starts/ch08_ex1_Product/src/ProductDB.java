@@ -1,4 +1,4 @@
-public class ProductDB {
+	public class ProductDB {
 
     public static Product getProduct(String productCode) {
         // In a more realistic application, this code would
@@ -36,7 +36,16 @@ public class ProductDB {
             s.setPrice(0.00);
             s.setVersion("8.2");
             p = s; // set Product object equal to the Software object
+            
+        } else if (productCode.equalsIgnoreCase("slim shady")) {
+        	Album a = new Album();
+        	a.setCode("slim shady");
+        	a.setDescription("Slim Shady");
+        	a.setPrice(20.00);
+        	a.setArtist("Eminem");
+        	p = a;        	
         }
+        
         return p;
     }
 }

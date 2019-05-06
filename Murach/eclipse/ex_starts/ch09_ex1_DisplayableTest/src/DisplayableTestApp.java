@@ -9,10 +9,18 @@ public class DisplayableTestApp {
         Product p = new Product("java", "Murach's Java Programming", 57.50);
         // TODO: add code that passes this object to the display method below
         
+        display (e);
+        display (p);
+        
         System.out.println();        
     }
 
     private static void display(Displayable d) {
         System.out.println(d.getDisplayText());
+    }
+    public interface DepartmentConstants {
+    	int ADMIN = 1;
+    	int EDITORIAL = 2;
+    	int MARKETING = 3;
     }
 }

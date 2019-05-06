@@ -1,6 +1,6 @@
 import java.text.NumberFormat;
 
-public class Product {
+public class Product implements Displayable {
 
     private String code;
     private String description;
@@ -46,4 +46,10 @@ public class Product {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         return currency.format(price);
     }
+
+	@Override
+	public String getDisplayText() {
+		// TODO Auto-generated method stub
+		return getDescription();
+	}
 }

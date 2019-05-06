@@ -29,23 +29,13 @@ public class InterestCalculatorApp {
 		System.out.println("Enter interest rate: ");
 		String intRateStr = sc.next();
 		BigDecimal intRate = new BigDecimal(intRateStr);
+		 intRate = intRate.divide(new BigDecimal(100));
 		
-			
-			
-			
-			
-			
-			//EDITED OUT
-			//double interestRate = sc.nextDouble();
-			
-			
-			
-			
-			//EDITED OUT
-			//interestRate = interestRate / 100;
+		
 			
 			// Calculate Business Logic
 				BigDecimal intAmt = loanAmt.multiply(intRate);
+			//	intRate = intRate / 100;
 			
 					//EDITED OUT
 			//BigDecimal decimalLoanAmount = new BigDecimal(Double.toString(loanAmount)).setScale(2, RoundingMode.HALF_UP);

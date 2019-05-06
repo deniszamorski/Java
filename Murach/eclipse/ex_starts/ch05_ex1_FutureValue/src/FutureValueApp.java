@@ -19,33 +19,19 @@ public class FutureValueApp {
                     "Enter number of years: ", 0, 100);
             System.out.println();
 
+            
             // calculate the future value
             double monthlyInterestRate = interestRate / 12 / 100;
             int months = years * 12;
             double futureValue = calculateFutureValue(
                     monthlyInvestment, monthlyInterestRate, months);
-
-            // get the currency and percent formatters
-            NumberFormat c = NumberFormat.getCurrencyInstance();
-            NumberFormat p = NumberFormat.getPercentInstance();
-            p.setMinimumFractionDigits(1);
-
-            // format the result as a single string
-            String results
-              = "Monthly investment:   " + c.format(monthlyInvestment) + "\n"
-              + "Yearly interest rate: " + p.format(interestRate / 100) + "\n"
-              + "Number of years:      " + years + "\n"
-              + "Future value:         " + c.format(futureValue) + "\n";
-
-            // print the results
-            System.out.println("FORMATTED RESULTS");
-            System.out.println(results);
-
-            // see if the user wants to continue
-            System.out.print("Continue? (y/n): ");
-            choice = sc.next();
-            sc.nextLine();  // discard any other data entered on the line
-            System.out.println();
+            
+            System.out.println("Formatted Results");
+            printFormattedResults(monthlyInvestment, 
+            		interestRate, years, futureValue);
+            
+            askToContinue(sc);
+            
         }
     }
 
@@ -128,4 +114,33 @@ public class FutureValueApp {
         }
         return futureValue;
     }
+    
+    private static void printFormattedResults(double monthlyInvestment, 
+    		double interestRate, int years, double futureValue) {
+    	
+    	// get the currency and percent formatters
+        NumberFormat c = NumberFormat.getCurrencyInstance();
+        NumberFormat p = NumberFormat.getPercentInstance();
+        p.setMinimumFractionDigits(1);
+
+        // format the result as a single string
+        String results
+          = "Monthly investment:   " + c.format(monthlyInvestment) + "\n"
+          + "Yearly interest rate: " + p.format(interestRate / 100) + "\n"
+          + "Number of years:      " + years + "\n"
+          + "Future value:         " + c.format(futureValue) + "\n";
+
+   
+        System.out.println(results);
+    }
+    public static String askToContinue(Scanner sc) {
+    	// see if the user wants to continue
+    	String choice = sc.next();
+    	System.out.print("Continue? (y/n): ");
+    	choice = sc.next();
+    	sc.nextLine();  // discard any other data entered on the line
+    	System.out.println();
+    	
+    	return choice;
+    	}
 }

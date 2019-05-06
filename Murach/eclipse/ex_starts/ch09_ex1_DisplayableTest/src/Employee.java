@@ -1,4 +1,5 @@
-public class Employee {
+
+public class Employee implements DisplayableTestApp.DepartmentConstants, Displayable {
 
     private int department;
     private String firstName;
@@ -9,4 +10,22 @@ public class Employee {
         this.lastName = lastName;
         this.firstName = firstName;
     }
+
+	
+    
+	public String getDisplayText() {
+		String dept = "Unknown";
+		if (department == ADMIN) {
+			dept = "Administration";
+		} else if (department == EDITORIAL) {
+			dept = "Editorial";
+		} else if (department == MARKETING) {
+			dept = "Marketing";
+		}
+		return dept;
+		
+		
+		
+    
+	}
 }
