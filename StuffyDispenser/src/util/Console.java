@@ -2,10 +2,9 @@ package util;
 
 import java.util.Scanner;
 
-
 public class Console {
 	private static Scanner sc = new Scanner(System.in);
-    public static int getInt(Scanner sc, String prompt) {
+    public static int getInt(String prompt) {
         int i = 0;
         boolean isValid = false;
         while (!isValid) {
@@ -26,7 +25,7 @@ public class Console {
         int i = 0;
         boolean isValid = false;
         while (!isValid) {
-            i = getInt(sc, prompt);
+            i = getInt(prompt);
             if (i <= min) {
                 System.out.println("Error! Number must be greater than " + min);
             } else if (i >= max) {
